@@ -23,3 +23,9 @@ while  i<a.length do
   puts a[i]
   i+=1
 end
+
+a= ['a','m','a'].join
+
+hash = {
+  a: 2
+}

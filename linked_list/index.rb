@@ -1,5 +1,6 @@
 require_relative 'search'
 require_relative 'create_linked_list'
+require_relative 'node'
 
 class LinkedList
   attr_reader :list
@@ -24,14 +25,14 @@ class LinkedList
   end
 
   def append(item)
-    node = new_node(item)
-    @last_node[:next] = node
-    @last_node = @last_node[:next]
+    node = LinkedListNode.new(item)
+    @last_node.next = node
+    @last_node = @last_node.next
   end
 
   def prepend(item)
-    node = new_node(item)
-    node[:next] = @list
+    node = LinkedListNode.new(item)
+    node.next = @list
     @list = node
   end
 
@@ -41,13 +42,6 @@ class LinkedList
       block.call(temp[:data])
       temp = temp[:next]
     end while !temp.nil?
-  end
-
-  def new_node(item)
-    {
-      data: item,
-      next: nil
-    }
   end
 end
 

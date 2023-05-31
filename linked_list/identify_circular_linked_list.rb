@@ -1,9 +1,19 @@
 
 def identify_circular_linked_list(head)
-  temp =  head
-  loop do
-    if temp == temp[:next]
+  result = false
+
+  return result if head.nil?
+
+  temp =  head[:next]
+  while !temp.nil?
+    if(temp == head)
+      result = true
+      break
+    end
+    temp = temp[:next]
   end
+
+  return result
 end
 
 head = {
@@ -12,12 +22,11 @@ head = {
 }
 last = {
   data: 5,
-  next: head
+  next: nil
 }
-list = head
 head[:next] = {
   data: 3,
   next: last
 }
 
-identify_circular_linked_list(head)
+puts identify_circular_linked_list(head)

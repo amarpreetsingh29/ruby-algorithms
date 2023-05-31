@@ -1,3 +1,4 @@
+require_relative 'node'
 def create_linked_list(arr_input, index = 0)
   last_node = nil
   if index ==  arr_input.length
@@ -6,11 +7,9 @@ def create_linked_list(arr_input, index = 0)
       last_node: last_node
     }
   end
-  node = {
-    data: arr_input[index],
-  }
+  node = LinkedListNode.new(arr_input[index])
   result = create_linked_list(arr_input, index+1)
-  node[:next] = result[:node]
+  node.next = result[:node]
   last_node =  result[:last_node].nil? ? node : result[:last_node]
   return {
     node: node,
@@ -18,6 +17,6 @@ def create_linked_list(arr_input, index = 0)
   }
 end
 
-a = [3,4,5]
-ll =  create_linked_list(a)
-puts ll
+# a = [3,4,5]
+# ll =  create_linked_list(a)
+# puts ll

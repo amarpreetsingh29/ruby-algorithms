@@ -1,5 +1,29 @@
 require_relative 'node'
 
+# * Loop over array
+#     * Create node for the element
+#     * Insert node
+#         * If tree is not present
+#             * Tree = node, return
+#         * If tree present
+#             * Iterate over tree to insert node
+
+
+# Insert node algo
+# 1. Initialize a infinite loop ? Do we need a loop?
+#     1. No
+# 2. Initialize pointer for iteration -> Temp = tree
+# 3. Compare  temp.data  with element
+#     1. If elm > tree.data
+#         1. If temp.right is null
+#             1. insert node
+#         2. Else Temp = temp.right
+#     2. If elm < tree.data
+#         1. If temp.left is null
+#             1. insert node
+#         2. Else Temp = temp.left
+#     3. If elm == tree.data
+
 def create_binary_search_tree(data)
   if data && data.instance_of?(Array) && data.length
     tree = nil
@@ -40,5 +64,5 @@ def insert_element(tree, elm)
 end
 
 
-input = [2,3,5,1,7]
-puts create_binary_search_tree(input)
+# input = [2,3,5,1,7]
+# puts create_binary_search_tree(input)
