@@ -39,8 +39,8 @@ class LinkedList
   def each(&block)
     temp = @list
     begin
-      block.call(temp[:data])
-      temp = temp[:next]
+      val = block.call(temp.data)
+      temp = temp.next
     end while !temp.nil?
   end
 end
@@ -55,4 +55,5 @@ ll.append(7)
 
 ll.each do |item|
   puts item
+  item
 end
