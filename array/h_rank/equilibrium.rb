@@ -29,5 +29,25 @@ end
 # puts "Equilibrium index is #{result}"
 
 
-result = equilibrium_point([1])
+# result = equilibrium_point([1])
+# puts "Equilibrium index is #{result}"
+
+
+def equilibrium_point2(a)
+  sum  = a.sum
+  left_sum = 0
+
+  a.each_with_index do |elm, idx|
+    right_sum = sum - left_sum - elm
+
+    return idx if left_sum == right_sum
+
+    left_sum += elm
+  end
+
+  -1
+end
+
+
+result = equilibrium_point2([1,3,5,2,2])
 puts "Equilibrium index is #{result}"
