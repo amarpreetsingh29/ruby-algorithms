@@ -1,4 +1,4 @@
-def max_occuring_char(s)
+def max_occuring_char_lexicographic(s)
   max_count = 1
   max_char = nil
   temp = {}
