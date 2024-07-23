@@ -7,4 +7,14 @@ def difference(a,b)
   print t
 end
 
-difference([5,6,7], [])
+
+# optimized - converted to set for O(1) check
+def difference_v2(a,b)
+  set_b = b.to_set
+  t = a.reject do |elm|
+    set_b.include?(elm)
+  end
+  print t
+end
+
+difference_v2([5,6,7], [5])
