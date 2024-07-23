@@ -7,6 +7,8 @@ def max_occuring_char_lexicographic(s)
       temp[char] = 1
     else
       temp[char] += 1
+      # this keeps track of max element,
+      # in case of count repition, the lexicographic element is considered
       if temp[char] > max_count
         max_count = temp[char]
         max_char = char

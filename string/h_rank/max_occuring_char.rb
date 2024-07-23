@@ -7,6 +7,7 @@ def max_occuring_char(s)
       temp[char] = 1
     else
       temp[char] += 1
+      # this keeps track of max element, in case of count repition, it's the first char that is the max
       if temp[char] > max_count
         max_count = temp[char]
         max_char = char
